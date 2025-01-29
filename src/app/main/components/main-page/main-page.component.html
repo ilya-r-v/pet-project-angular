@@ -1,0 +1,37 @@
+<div class="all-content" >
+    <div class="container">
+        <div (slideSWitch)="currentIndex = $event % slides.length" class="all" [ngStyle]="{'background-image': getCurrentSlideUrl()}" MyChangeBackground>
+            <!-- collection -->
+            <div class="swipe" >
+                @for(slide of slides; track slide; let i = $index){
+                    
+                        <div 
+                            class="dot" 
+                            (click)="goToSlide(i);"
+                            [class.active]="i == currentIndex"
+                            >
+                        </div>
+                
+                }
+                
+            </div>
+        </div>
+        <div class="buttonR" (click)="goToRight()">❱</div>
+        <div class="buttonL" (click)="goToLeft()">❰</div> 
+        
+    </div>
+    <div class="container">
+        <!-- sales -->
+        <p>sales 25%</p>
+    </div>
+    <div class="container">
+        <!-- shoes -->
+        <div class="all2">
+            <div class="shoes_accessories">
+                <img src="assets/images/shoes.jpg" width="700" height="500">
+                <img src="assets/images/accessories.jpg" width="700" height="200">
+            </div>
+            <img src="assets/images/clothes.jpg" height="706" width="453">
+        </div>
+    </div>
+</div>
