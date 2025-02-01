@@ -1,6 +1,7 @@
 <div class="all-content" >
     <div class="container">
         <div (slideSWitch)="currentIndex = $event % slides.length" class="all" [ngStyle]="{'background-image': getCurrentSlideUrl()}" MyChangeBackground>
+            <div class="title">{{getTitle()}}</div>
             <!-- collection -->
             <div class="swipe" >
                 @for(slide of slides; track slide; let i = $index){
@@ -28,10 +29,10 @@
         <!-- shoes -->
         <div class="all2">
             <div class="shoes_accessories">
-                <img src="assets/images/shoes.jpg" width="700" height="500">
-                <img src="assets/images/accessories.jpg" width="700" height="200">
-            </div>
-            <img src="assets/images/clothes.jpg" height="706" width="453">
+                <img src="assets/images/shoes.jpg" width="700" height="500" routerLink="/shoes" routerLinkActive="router-link-active" >
+                <img src="assets/images/accessories.jpg" width="700" height="200" routerLink="/accessories" routerLinkActive="active">
+            </div> 
+            <img src="assets/images/clothes.jpg" height="706" width="453" routerLink="/clothes" routerLinkActive="active">
         </div>
     </div>
 </div>

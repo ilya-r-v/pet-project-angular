@@ -1,10 +1,10 @@
 .all-content{
-    //font-family: Bebas;
+    font-family: Bebas Neue;
     
     height: 250vh;
     width: 98vw;
     //background-color: black;
-    background-image: url("C:/Users/1686767/OneDrive/Рабочий стол/programming/pet-project-angular/src/assets/images/main-page-wallpaper.jpg");
+    //background-image: url("/assets/images/main-page-wallpaper.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll; 
@@ -15,7 +15,7 @@
     .container {
         //position: relative;
         //font-family: Bebas;
-        border-radius: 5px;
+        
         
         margin-top: 35px;
         margin-bottom: 15px; 
@@ -24,9 +24,14 @@
         margin-left: 10%;
         margin-right: 10%;
         color: white;
+        
+        
         backdrop-filter: blur(15px);
+       
+        
 
         p { 
+            border: 3px solid black;
             font-size: 100px;
             color: black;
             text-align: center;
@@ -45,7 +50,17 @@
             height: 600px;
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: center;
+            text-align: center;
+            top: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid black;
 
+            .title {
+                font-size: 70px;
+            }
 
             .swipe {
                 display: flex;
@@ -58,9 +73,9 @@
                 .dot{
                     margin: 0 6px;
                     cursor: pointer;
-                    height: 20px;
-                    width: 20px;
-                    border-radius: 10px;
+                    height: 16px;
+                    width: 16px;
+                    border-radius: 8px;
                     background-color: grey;
                     &:hover, &.active{
                         background-color: white;
@@ -70,7 +85,7 @@
         }
         .buttonR{
             position: absolute;
-            top: 45%;
+            top: 40%;
             transform: translate(0, -5%);
             right: 32px;
             font-size: 90px;
@@ -83,7 +98,7 @@
         }
         .buttonL{
             position: absolute;
-            top: 45%;
+            top: 40%;
             transform: translate(0, -5%);
             left: 32px;
             font-size: 90px;
@@ -98,14 +113,16 @@
         .all2{
             display: flex;
             justify-content: center;
+            border: 3px solid black;
+            
         
         
             img{
                 transition: all ease-in-out 0.3s;
                 cursor: pointer;
-                &:hover {
-                    transform: scale(1.05);
-                }
+                // &:hover {
+                //     transform: scale(1.05);
+                // }
             }
         
         

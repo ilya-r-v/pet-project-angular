@@ -1,10 +1,11 @@
 import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { MyChangeBackgroundDirective } from '../../directives/change-background.directive';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
-  imports: [NgStyle, MyChangeBackgroundDirective],
+  imports: [NgStyle, MyChangeBackgroundDirective, RouterLink],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })
@@ -16,12 +17,27 @@ export class MainPageComponent{
   public slides: any[] = [
     {
       url: "assets/images/col1.jpg",
+      title: "collection 2024 winter"
     },
     {
       url: "assets/images/col2.jpg",
+      title: "collection 2025 winter"
     },
     {
       url: "assets/images/col3.jpg",
+      title: "collection 2024 spring"
+    },
+    {
+      url: "assets/images/col4.jpg",
+      title: "collection 2024 autumn"
+    },
+    {
+      url: "assets/images/col5.jpg",
+      title: "collection 2024 summer"
+    },
+    {
+      url: "assets/images/col6.jpg",
+      title: "collection 2023 winter"
     },
   ]
   
@@ -36,6 +52,10 @@ export class MainPageComponent{
 
   public getCurrentSlideUrl() {
     return `url('${this.slides[this.currentIndex].url}')`;
+  }
+
+  public getTitle() {
+    return this.slides[this.currentIndex].title
   }
 
 

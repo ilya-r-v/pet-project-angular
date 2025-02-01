@@ -1,0 +1,8 @@
+<div class="shoes-list">
+    @for(item of myObjects; track item; let i = $index){
+        <div [routerLink]="[i]" class="shoes-list_item">
+            <span>{{ item.title }}</span>
+        </div>
+    }
+    
+</div>

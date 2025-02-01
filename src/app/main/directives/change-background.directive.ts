@@ -10,7 +10,10 @@ export class MyChangeBackgroundDirective implements AfterViewInit {
     public urls: string[] = [
         'url("assets/images/col1.jpg")',
         'url("assets/images/col2.jpg")',
-        'url("assets/images/col3.jpg")'
+        'url("assets/images/col3.jpg")',
+        'url("assets/images/col4.jpg")',
+        'url("assets/images/col5.jpg")',
+        'url("assets/images/col6.jpg")',
       ]
 
       public url: string = '';
