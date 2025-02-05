@@ -1,8 +1,8 @@
 <div class="all-content">
 
     <div class="size-guide">
-        <h2>{{ shoe.collection }}</h2>
-        <h3> {{ shoe.name }}   {{ shoe.price }}$</h3>
+        <h2>{{ clothes.collection }}</h2>
+        <h3> {{ clothes.name }}   {{ clothes.price }}$</h3>
         <br>
         <h3>Select size</h3>
         <hr>
@@ -23,7 +23,7 @@
         <button class="button">ADD TO CART</button>
     </div>
 
-    @if(shoe) {
+    @if(clothes) {
         <div class="object">
             <div class="mainImage">
                 <img [src]="getImage()" width="700px" height="524px">
@@ -32,12 +32,12 @@
                 <img class="buttonL" (click)="goToLeft()" src="/assets/images/left-arrow.png">
             </div>
             <span class="images">
-                @for(image of shoe.images; track image; let i = $index){
+                @for(image of clothes.images; track image; let i = $index){
                     <div 
                     class="image"
                     (click)="goToImage(i)"
                     >
-                    <img [src]="shoe.images[i]" width="70px" height="70px">
+                    <img [src]="clothes.images[i]" width="70px" height="70px">
                     </div>
                 }
             </span>
@@ -46,5 +46,6 @@
     }
     
 </div>
+
 
 

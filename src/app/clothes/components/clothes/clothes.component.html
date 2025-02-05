@@ -1,1 +1,167 @@
-<p>clothes works!</p>
+<div class="all-content">
+    <div class="search_filters">
+        <div class="search">
+            <img src="/assets/images/search.png" width="40px" height="25px">
+            <input type="text" placeholder="search" size="60" [(ngModel)]="searchValue">
+        </div>
+        <div class="filters" (click)="flag_filter = !flag_filter">
+            <img src="assets/images/filter.webp" width="22px" height="22px">
+            <div class="text">filters</div>
+        </div>
+    </div>
+    @if(flag_filter) {
+        <div class="filters_panel">
+            Filters and Sorts
+            <hr>
+            <div class="filters_content">
+                <div class="filter_item" (click)="flag_sort = !flag_sort">Sort By
+                    <img src="/assets/images/down-arrow.png" width="28px" height="17px">
+                </div>
+                @if(flag_sort) {
+                    <div class="sort_panel">
+                        <div class="item" (click)="lowHigh()">price(low - high)</div>
+                        <div class="item" (click)="fSales()">sales</div>
+                        <div class="item" (click)="highLow()">price(high - low)</div>
+                    </div>
+                }
+                <div class="filter_item" (click)="flag_collection = !flag_collection">Collection
+                    <img src="/assets/images/down-arrow.png" width="28px" height="17px">
+                </div>
+                @if(flag_collection) {
+                    <div class="sort_panel">
+                        <div class="item" (click)="fCol25()">collection 2025</div>
+                        <div class="item" (click)="fCol24()">collection 2024</div>
+                        <div class="item" (click)="fCol23()">collection 2023</div>
+                    </div>
+                }
+                <div class="filter_item" (click)="flag_gender = !flag_gender">Gender
+                    <img src="/assets/images/down-arrow.png" width="28px" height="17px">
+                </div>
+                @if(flag_gender) {
+                    <div class="sort_panel">
+                        <div class="item" (click)="fMen()">men</div>
+                        <div class="item" (click)="fWomen()">women</div>
+                    </div>
+                }
+                <div class="filter_item">Size(in dev)
+                    <img src="/assets/images/down-arrow.png" width="28px" height="17px">
+                </div>
+                <div class="filter_item" (click)="flag_price = ! flag_price">Price
+                    <img src="/assets/images/down-arrow.png" width="28px" height="17px">
+                </div>
+                @if(flag_price) {
+                    <div class="price_panel">
+                        <div class="price-item"><input type="text" placeholder="59" [(ngModel)]="priceFrom">$ </div>
+                        <div class="price-item"><input type="text" placeholder="369" [(ngModel)]="priceBefore">$ </div>
+                    </div>
+                    <div class="button" (click)="apply()">Apply</div>
+                }
+            </div>
+        </div>
+    }
+    <div class="shoes-list">
+        @for(item of myObjects; track item; let i = $index){
+            @if(searchValue == ''){
+                @if(flag_sales && item.sales != null){
+                    <div [routerLink]="[i]" class="shoes-list_item">
+                        <div class="content">
+                            <img [src]="item.mainImage" width="180px" height="160px"> 
+                            <div class="price">{{ item.price}}$  {{ item.sales }}</div>
+                            <div class="name">{{ item.name }}</div>
+                            <div class="gender">{{ item.gender }}</div>
+                            <div class="collection">{{ item.collection }}</div>
+                        </div>
+                    </div>
+                } 
+                @if(f_col_25 && item.collection == 'collection 2025'){
+                    <div [routerLink]="[i]" class="shoes-list_item">
+                        <div class="content">
+                            <img [src]="item.mainImage" width="180px" height="160px"> 
+                            <div class="price">{{ item.price}}$  {{ item.sales }}</div>
+                            <div class="name">{{ item.name }}</div>
+                            <div class="gender">{{ item.gender }}</div>
+                            <div class="collection">{{ item.collection }}</div>
+                        </div>
+                    </div>
+                } 
+                @if(f_col_24 && item.collection == 'collection 2024'){
+                    <div [routerLink]="[i]" class="shoes-list_item">
+                        <div class="content">
+                            <img [src]="item.mainImage" width="180px" height="160px"> 
+                            <div class="price">{{ item.price}}$  {{ item.sales }}</div>
+                            <div class="name">{{ item.name }}</div>
+                            <div class="gender">{{ item.gender }}</div>
+                            <div class="collection">{{ item.collection }}</div>
+                        </div>
+                    </div>
+                }
+                @if(f_col_23 && item.collection == 'collection 2023'){
+                    <div [routerLink]="[i]" class="shoes-list_item">
+                        <div class="content">
+                            <img [src]="item.mainImage" width="180px" height="160px"> 
+                            <div class="price">{{ item.price}}$  {{ item.sales }}</div>
+                            <div class="name">{{ item.name }}</div>
+                            <div class="gender">{{ item.gender }}</div>
+                            <div class="collection">{{ item.collection }}</div>
+                        </div>
+                    </div>
+                }  
+                @if(f_men && item.gender == 'men'){
+                    <div [routerLink]="[i]" class="shoes-list_item">
+                        <div class="content">
+                            <img [src]="item.mainImage" width="180px" height="160px"> 
+                            <div class="price">{{ item.price}}$  {{ item.sales }}</div>
+                            <div class="name">{{ item.name }}</div>
+                            <div class="gender">{{ item.gender }}</div>
+                            <div class="collection">{{ item.collection }}</div>
+                        </div>
+                    </div>
+                }
+                @if(f_women && item.gender == 'women'){
+                    <div [routerLink]="[i]" class="shoes-list_item">
+                        <div class="content">
+                            <img [src]="item.mainImage" width="180px" height="160px"> 
+                            <div class="price">{{ item.price}}$  {{ item.sales }}</div>
+                            <div class="name">{{ item.name }}</div>
+                            <div class="gender">{{ item.gender }}</div>
+                            <div class="collection">{{ item.collection }}</div>
+                        </div>
+                    </div>
+                }
+                @if(flag_apply && item.price <= priceBefore && item.price >= priceFrom){
+                    <div [routerLink]="[i]" class="shoes-list_item">
+                        <div class="content">
+                            <img [src]="item.mainImage" width="180px" height="160px"> 
+                            <div class="price">{{ item.price}}$  {{ item.sales }}</div>
+                            <div class="name">{{ item.name }}</div>
+                            <div class="gender">{{ item.gender }}</div>
+                            <div class="collection">{{ item.collection }}</div>
+                        </div>
+                    </div>
+                }
+                @if(!flag_sales && !f_col_25 && !f_col_24 && !f_col_23 && !f_men && !f_women && !flag_apply){
+                <div [routerLink]="[i]" class="shoes-list_item">
+                    <div class="content">
+                        <img [src]="item.mainImage" width="180px" height="160px"> 
+                        <div class="price">{{ item.price }}$  {{ item.sales }}</div>
+                        <div class="name">{{ item.name }}</div>
+                        <div class="gender">{{ item.gender }}</div>
+                        <div class="collection">{{ item.collection }}</div>
+                    </div>
+                </div>
+                }
+            }
+            @if(searchValue != '' && item.name.toLowerCase().includes(searchValue.toLowerCase())){
+                <div [routerLink]="[i]" class="shoes-list_item">
+                    <div class="content">
+                        <img [src]="item.mainImage" width="180px" height="160px"> 
+                        <div class="price">{{ item.price}}$  {{ item.sales }}</div>
+                        <div class="name">{{ item.name }}</div>
+                        <div class="gender">{{ item.gender }}</div>
+                        <div class="collection">{{ item.collection }}</div>
+                    </div>
+                </div>
+            } 
+        }
+    </div>
+</div>
