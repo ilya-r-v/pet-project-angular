@@ -1,0 +1,52 @@
+<div class="all-content">
+
+    <div class="size-guide">
+        <h2>{{ accessory.collection }}</h2>
+        <h3> {{ accessory.name }}   {{ accessory.price }}$</h3>
+        <br>
+        <h3>Select size</h3>
+        <hr>
+            <div class="size-table">
+                <div class="table">37</div>
+                <div class="table">38</div>
+                <div class="table">39</div>
+                <div class="table">39.5</div>
+                <div class="table">40</div>
+                <div class="table">40.5</div>
+                <div class="table">41</div>
+                <div class="table">41.5</div>
+                <div class="table">42</div>
+                <div class="table">42.5</div>
+                <div class="table">43</div>
+                <div class="table">44</div>
+            </div>
+        <button class="button">ADD TO CART</button>
+    </div>
+
+    @if(accessory) {
+        <div class="object">
+            <div class="mainImage">
+                <img [src]="getImage()" width="700px" height="524px">
+                <!-- <div>{{ shoe.content }}</div> -->
+                <img class="buttonR" (click)="goToRight()" src="/assets/images/right-arrow.png">
+                <img class="buttonL" (click)="goToLeft()" src="/assets/images/left-arrow.png">
+            </div>
+            <span class="images">
+                @for(image of accessory.images; track image; let i = $index){
+                    <div 
+                    class="image"
+                    (click)="goToImage(i)"
+                    >
+                    <img [src]="accessory.images[i]" width="70px" height="70px">
+                    </div>
+                }
+            </span>
+        </div>
+        
+    }
+    
+</div>
+
+
+
+

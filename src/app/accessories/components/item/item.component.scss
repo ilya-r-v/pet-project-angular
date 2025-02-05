@@ -1,0 +1,97 @@
+.all-content{
+    font-family: Bebas Neue;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-top: 40px;
+
+    .size-guide{
+        width: 350px;
+
+        .size-table{
+            display: grid;
+            grid-gap: 6px;
+            grid-template-columns: repeat(3, 1fr);
+            flex-wrap: wrap-reverse;
+            
+            
+
+            .table{
+                //width: 100%;
+                font-size: 23px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 110px;
+                height: 60px;
+                border-radius: 9px;
+                border: 1px solid black;
+                cursor: pointer;
+                
+                // transition: all ease-in-out 0.3s;
+
+                // &:hover {
+                //     transform: scale(1.05);
+                // }
+            }
+        }
+
+        .button{
+            background-color: black;
+            color: white;
+
+            font-size: 20px;
+            text-align: center;
+
+            margin-top: 20px;
+            
+            border-radius: 9px;
+            width: 350px;
+            height: 60px;
+
+            cursor: pointer;
+            transition: all ease-in-out 0.3s;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+        
+    }
+
+    .object {
+        display: flex;
+        .mainImage{
+
+            .buttonR{
+                position: absolute;
+                left: 1010px;
+                width: 36px;
+                height: 36px;
+                cursor: pointer;
+                top: 650px;
+            }
+
+            .buttonL{
+                position: absolute;
+                left: 940px;
+                width: 36px;
+                height: 36px;
+                cursor: pointer;
+                top: 650px;
+            }
+        }
+
+        
+       
+        .images{
+            display: block;
+            margin-left: 10px;
+
+            .image{
+                cursor: pointer;
+            }
+        }
+    }
+}
